@@ -1,0 +1,10 @@
+# dotfiles
+## restore
+```
+echo ".dotfiles" >> .gitignore
+git clone --bare https://github.com/GeMakesGames/dotfiles.git $HOME/.dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.zshrc
+dotfiles config --local status.showUntrackedFiles no
+dotfiles switch -f main
+```
