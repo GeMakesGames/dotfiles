@@ -1,4 +1,3 @@
-require('gemakesgames.options')
+require('gemakesgames.settings')
 require('gemakesgames.lazy')
-require('gemakesgames.key_bindings')
-require('gemakesgames.highlight_yank')
+require('gemakesgames.keys')
