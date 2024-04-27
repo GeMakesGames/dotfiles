@@ -1,0 +1,73 @@
+@import "themes/tokyo-night.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 21px;
+}
+
+window#waybar {
+    background: @bar-bg;
+    border-radius: 8px;
+}
+
+#workspaces {
+    color: @main-fg;
+    background: @main-bg;
+    opacity: 1.0;
+    margin: 6px 0px 6px 0px;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#workspaces button {
+    color: @bright-white;
+    border-radius: 8px;
+    margin: 4px 0px 4px 0px;
+    padding: 0px 4px 0px 4px;
+}
+
+#workspaces button.active {
+    color: #7da6ff;
+}
+
+#pulseaudio,
+#bluetooth,
+#clock,
+#network,
+#tray,
+#custom-inner_padd,
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#custom-rr_end {
+    color: @bright-white;
+    background: @main-bg;
+    opacity: 1;
+    margin: 6px 0px 6px 0px;
+    padding: 0px 4px 0px 4px;
+}
+
+#pulseaudio,
+#bluetooth {
+    color: @bright-blue;
+}
+
+#custom-l_end{
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 8px;
+    padding-left: 0px;
+}
+
+#custom-r_end{
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 8px;
+    padding-right: 0px;
+}

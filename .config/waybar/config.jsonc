@@ -1,0 +1,272 @@
+{
+    //"output": "DP-1",
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    //"width": 2540, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/padd",
+        "custom/l_end",
+        "hyprland/workspaces",
+        "custom/r_end",
+        "custom/padd"
+        //"custom/l_end",
+        //"tray",
+        //"custom/r_end",
+    ],
+    "modules-center": [
+        //"hyprland/window"
+        "custom/padd",
+        "custom/l_end",
+        "clock#date",
+        "custom/r_end",
+        "custom/padd"
+    ],
+    "modules-right": [
+        "custom/l_end",
+        "network",
+        "custom/r_end",
+        "custom/l_end",
+        "pulseaudio",
+        "custom/r_end",
+        "custom/l_end",
+        "pulseaudio#source",
+        "custom/r_end",
+        "custom/l_end",
+        "bluetooth",
+        "custom/r_end",
+        "custom/l_end",
+        "clock#time",
+        "custom/r_end",
+        "custom/padd"
+    ],
+    "hyprland/workspaces": {
+        "format" : "{name}",
+        "format-icons": {
+            "active" : "󱨇",
+            "default":"",
+        },
+        "disable-scroll": true,
+        "rotate": 0,
+        "all-outputs": false,
+        "active-only": false,
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 3,
+        }
+    },
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 5
+    },
+    "clock#time":{
+        "format": "󰥔 {:%H:%M}",
+    },
+    "clock#date": {
+        "format": "󰃭 {:%A, %d %B %Y}",
+        "rotate": 0,
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#acb0d0'><b>{}</b></span>",
+                "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
+                "today": "<span color='#ff7a93'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": "󰂱",
+        "format-disabled": "<span color='#ff7a93'>󰂲</span>",
+        "format-off": "<span color='#ff7a93'>󰂲</span>",
+        "format-no-controller": "<span color='#ff7a93'>󰂲</span>",
+        "rotate": 0,
+        "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%"
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": "",
+        "format-ethernet": "<span color='#b9f27c'>󰈀</span>",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span color='#0db9d7'> {bandwidthDownBytes}</span> <span foreground='#ff9e64'> {bandwidthUpBytes}</span>",
+        "interval": 2,
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "rotate": 0,
+        "format-muted": "<span color='#ff7a93'> </span>",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 1,
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source-muted": "<span color='#ff7a93'> </span>",
+        "format-source": " {volume}%",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "tooltip-format": " {desc} // {volume}%",
+        "scroll-step": 1,
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    // padding modules //
+
+    "custom/l_end":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/r_end":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/padd":{
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    }
+}
