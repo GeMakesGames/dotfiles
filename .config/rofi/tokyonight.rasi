@@ -1,0 +1,164 @@
+* {
+main-bg: #24283b;
+main-fg: #a9b1d6;
+normal-black  : #32344a;
+normal-red    : #f7768e;
+normal-green  : #9ece6a;
+normal-yellow : #e0af68;
+normal-blue   : #7aa2f7;
+normal-magenta: #ad8ee6;
+normal-cyan   : #449dab;
+normal-white  : #9699a8;
+bright-black  : #444b6a;
+bright-red    : #ff7a93;
+bright-green  : #b9f27c;
+bright-yellow : #ff9e64;
+bright-blue   : #7da6ff;
+bright-magenta: #bb9af7;
+bright-cyan   : #0db9d7;
+bright-white  : #acb0d0;
+transparent: rgba(0,0,0,0);
+}
+
+// Main //
+window {
+    height:                      37em;
+    width:                       49em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    background-color:            @main-bg;
+    border-color:                @bright-blue;
+    border-radius:               6px;
+    border:                      1px;
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "listbox" ];
+    background-color:            transparent;
+}
+
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     1.2em;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+    background-color:            @main-bg;
+}
+
+textbox-prompt-colon {
+    enabled:                     false;
+    expand:                      false;
+    str:                         "test";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+entry {
+    border-radius:               6px;
+    border:                      1px;
+    border-color:                @bright-blue;
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.8em;
+    text-color:                  @bright-white;
+    background-color:            transparent;
+    placeholder:                 "looking for something...?";
+    placeholder-color:           @normal-white;
+    cursor:                      text;
+}
+
+// Lists //
+listbox {
+    padding:                     1.15em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview"];
+    background-color:            @main-bg;
+}
+listview {
+    padding:                     0em;
+    spacing:                     0em;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       10;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+
+// Modes //
+mode-switcher {
+    orientation:                 vertical;
+    width:                       1em;
+    enabled:                     false;
+    padding:                     1.5em;
+    spacing:                     1.5em;
+    background-color:            transparent;
+}
+button {
+    cursor:                      pointer;
+    vertical-align:              0.50;
+    horizontal-align:            0.45;
+    border-radius:               2em;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+}
+button selected {
+    background-color:            @main-fg;
+    text-color:                  @main-bg;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.2em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @bright-white;
+}
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}
+element selected.normal {
+    background-color:            @main-fg;
+    text-color:                  @bright-black;
+    border-color:                @main-fg;
+    border-radius:               6px;
+    border:                      1px;
+}
+element-icon {
+    size:                        2.1em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+    padding: 	         	     0.7em;
+}
+
