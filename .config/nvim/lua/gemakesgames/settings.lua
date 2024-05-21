@@ -5,7 +5,7 @@ vim.o.nu = true
 vim.o.rnu = true
 
 vim.o.showmode = false
-vim.o.swap = false
+vim.o.swapfile = false
 
 vim.o.clipboard = 'unnamedplus'
 

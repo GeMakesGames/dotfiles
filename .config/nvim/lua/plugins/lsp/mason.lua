@@ -5,6 +5,7 @@ return {
 		'mfussenegger/nvim-dap',
 		'jay-babu/mason-nvim-dap.nvim',
 		'rcarriga/nvim-dap-ui',
+		'nvim-neotest/nvim-nio',
 		'theHamsta/nvim-dap-virtual-text',
 		'folke/neodev.nvim',
 	},
