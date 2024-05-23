@@ -13,6 +13,9 @@
         "custom/l_end",
         "hyprland/workspaces",
         "custom/r_end",
+        "custom/l_end",
+        "tray",
+        "custom/r_end",
         "custom/padd"
         //"custom/l_end",
         //"tray",
@@ -24,9 +27,10 @@
         "custom/l_end",
         "clock#date",
         "custom/r_end",
-        "custom/padd"
+        "custom/padd",
     ],
     "modules-right": [
+        "custom/padd",
         "custom/l_end",
         "network",
         "custom/r_end",
@@ -56,7 +60,7 @@
         "active-only": false,
         "on-click": "activate",
         "persistent-workspaces": {
-            "*": 3,
+            "*": 4,
         }
     },
     // Modules configuration
@@ -119,7 +123,7 @@
         }
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 16,
         "spacing": 5
     },
     "clock#time":{
